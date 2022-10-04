@@ -5,8 +5,10 @@ import moment from 'moment';
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi';
 import Loader from './Loader';
+//@ts-ignore
+import demoImage from "../images/cryptonews.jpg";
 
-const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
+
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -28,7 +30,7 @@ const News = ({ simplified }) => {
             placeholder="Select a Crypto"
             optionFilterProp="children"
             onChange={(value) => setNewsCategory(value)}
-            filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+            filterOption={true}
           >
             <Option value="Cryptocurency">Cryptocurrency</Option>
             {data?.data?.coins?.map((currency) => <Option value={currency.name}>{currency.name}</Option>)}
@@ -41,7 +43,7 @@ const News = ({ simplified }) => {
             <a href={news.url} target="_blank" rel="noreferrer">
               <div className="news-image-container">
                 <Title className="news-title" level={4}>{news.name}</Title>
-                <img src={news?.image?.thumbnail?.contentUrl || demoImage} alt="" />
+                <img src={news?.image?.thumbnail?.contentUrl || demoImage} alt="" style={{width:"100px", maxHeight:"122px"}} />
               </div>
               <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
               <div className="provider-container">
@@ -49,7 +51,7 @@ const News = ({ simplified }) => {
                   <Avatar src={news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt="" />
                   <Text className="provider-name">{news.provider[0]?.name}</Text>
                 </div>
-                <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
+                <Text>{moment(news.datePublished).startOf('s').fromNow()}</Text>
               </div>
             </a>
           </Card>
