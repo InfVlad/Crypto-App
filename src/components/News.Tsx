@@ -13,7 +13,11 @@ import demoImage from "../images/cryptonews.jpg";
 const { Text, Title } = Typography;
 const { Option } = Select;
 
-const News = ({ simplified }) => {
+type NewsProps = {
+  simplified?: boolean
+};
+
+const News = ({ simplified }: NewsProps) => {
   const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
   const { data } = useGetCryptosQuery(100);
   const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory, count: simplified ? 6 : 12 });
@@ -33,11 +37,11 @@ const News = ({ simplified }) => {
             filterOption={true}
           >
             <Option value="Cryptocurency">Cryptocurrency</Option>
-            {data?.data?.coins?.map((currency) => <Option value={currency.name}>{currency.name}</Option>)}
+            {data?.data?.coins?.map((currency:any) => <Option value={currency.name}>{currency.name}</Option>)}
           </Select>
         </Col>
       )}
-      {cryptoNews.value.map((news, i) => (
+      {cryptoNews.value.map((news:any, i:number) => (
         <Col xs={24} sm={12} lg={8} key={i}>
           <Card hoverable className="news-card">
             <a href={news.url} target="_blank" rel="noreferrer">
