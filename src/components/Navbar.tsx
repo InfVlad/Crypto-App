@@ -45,13 +45,13 @@ const Navbar = (props: Props) => {
 			</div>
 			{activeMenu && (
 				<Menu theme="dark">
-					<Menu.Item icon={<HomeOutlined />}>
+					<Menu.Item icon={<HomeOutlined />} onClick={() => setActiveMenu(!activeMenu)}>
 						<Link to="/">Home</Link>
 					</Menu.Item>
-					<Menu.Item icon={<FundOutlined />}>
+					<Menu.Item icon={<FundOutlined />} onClick={() => setActiveMenu(!activeMenu)}>
 						<Link to="/cryptocurrencies">Cryptocurrencies</Link>
 					</Menu.Item>
-					<Menu.Item icon={<BulbOutlined />}>
+					<Menu.Item icon={<BulbOutlined />} onClick={() => setActiveMenu(!activeMenu)}>
 						<Link to="/news">News</Link>
 					</Menu.Item>
 				</Menu>

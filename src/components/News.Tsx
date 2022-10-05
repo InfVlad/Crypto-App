@@ -47,7 +47,7 @@ const News = ({ simplified }: NewsProps) => {
             <a href={news.url} target="_blank" rel="noreferrer">
               <div className="news-image-container">
                 <Title className="news-title" level={4}>{news.name}</Title>
-                <img src={news?.image?.thumbnail?.contentUrl || demoImage} alt="" style={{width:"100px", maxHeight:"122px"}} />
+                <img src={news?.image?.thumbnail?.contentUrl || demoImage} alt="news thumbnail" style={{width:"100px", height:"100px"}} />
               </div>
               <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
               <div className="provider-container">
