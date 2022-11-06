@@ -2,7 +2,7 @@ import React from "react";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoApiHeaders = {
-	"X-RapidAPI-Key": "670f8fb8cbmshc5830725a535972p165946jsn921a145e3dcb",
+	"X-RapidAPI-Key": import.meta.env.VITE_COIN_RANKING_API_KEY,
 	"X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
 };
 
@@ -62,7 +62,7 @@ const options = {
       offset: '0'
     },
     headers: {
-      'X-RapidAPI-Key': '670f8fb8cbmshc5830725a535972p165946jsn921a145e3dcb',
+      'X-RapidAPI-Key': ,
       'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
     }
   }; */

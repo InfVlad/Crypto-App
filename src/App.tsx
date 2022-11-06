@@ -24,8 +24,8 @@ function App() {
         </Layout>
         <div className="footer">
           <Typography.Title level={5} style={{ color: "white", textAlign: "center"}}>
-            Cryptoverse <br/>
-            All rights reserved
+            2022 Cryptoverse. All rights reserved <br/>
+            Site made by <a href="https://github.com/InfVlad" target="_blank" rel="noopener noreferrer">Vladimir Infante</a>
           </Typography.Title>
           <Space>
             <Link to="/">Home</Link>
