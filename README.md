@@ -1,5 +1,6 @@
 # Crypto-App
 Cryptocurrency WebApp made with ReactJs and Typescript
+
 Demo live: https://crypto-data-app.netlify.app/
 
 if you want to run it:
